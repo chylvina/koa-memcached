@@ -1,0 +1,29 @@
+{
+  "name": "koa-memcached",
+  "description": "koa session with memcached",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:chylvina/koa-memcached.git"
+  },
+  "version": "0.1.0",
+  "keywords": [
+    "koa",
+    "middleware",
+    "session",
+    "memcached"
+  ],
+  "author": {
+    "name": "chylvina",
+    "email": "chylvina@gmail.com"
+  },
+  "dependencies": {
+    "debug": "~1.0.1",
+    "node_memcached": "^0.2.8"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">= 0.11.11"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/chylvina/koa-memcached"
+}
