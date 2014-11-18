@@ -57,15 +57,15 @@ MemcachedStore.prototype.get = function *(sid) {
   var data = yield function (cb) {
     self.client.get(sid, cb);
   };
-  data = JSON.parse(data.val.toString());
 
   debug('get session: %s', data || 'none');
   if (!data) {
     return null;
   }
   try {
-    return JSON.parse(data.toString());
-  } catch (err) {
+    return JSON.parse(data);
+  }
+  catch (err) {
     // ignore err
     debug('parse session error: %s', err.message);
   }
@@ -80,12 +80,12 @@ MemcachedStore.prototype.set = function *(sid, sess, ttl) {
   if (ttl) {
     debug('SETEX %s %s %s', sid, sess, ttl);
     yield function (cb) {
-      self.client.set(sid, JSON.stringify(sess), ttl, cb);
+      self.client.set(sid, sess, ttl, cb);
     };
   } else {
     debug('SET %s %s', sid, sess);
     yield function (cb) {
-      self.client.set(sid, JSON.stringify(sess), cb);
+      self.client.set(sid, sess, cb);
     };
   }
   debug('SET %s complete', sid);

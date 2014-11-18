@@ -5,7 +5,7 @@
     "type": "git",
     "url": "git@github.com:chylvina/koa-memcached.git"
   },
-  "version": "0.1.0",
+  "version": "0.1.2",
   "keywords": [
     "koa",
     "middleware",
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "debug": "~1.0.1",
-    "node_memcached": "^0.2.8"
+    "node_memcached": "~1.0.2"
   },
   "devDependencies": {},
   "engines": {
