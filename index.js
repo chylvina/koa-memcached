@@ -91,7 +91,7 @@ MemcachedStore.prototype.set = function *(sid, sess, ttl) {
   debug('SET %s complete', sid);
 };
 
-MemcachedStore.prototype.destroy = function *(sid, sess) {
+MemcachedStore.prototype.destroy = function *(sid) {
   var self = this;
   debug('DEL %s', sid);
   yield function (cb) {
